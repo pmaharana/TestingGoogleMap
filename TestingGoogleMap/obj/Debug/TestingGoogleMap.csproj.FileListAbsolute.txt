@@ -100,3 +100,6 @@ C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\bin\Microsof
 C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.csprojResolveAssemblyReference.cache
 C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.dll
 C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.pdb
+C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.Migrations.first.resources
+C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.csproj.GenerateResource.Cache
+C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.Migrations.changedMapclass.resources

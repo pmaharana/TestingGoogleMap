@@ -29,5 +29,7 @@ namespace TestingGoogleMap.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Map> Maps { get; set; }
     }
 }

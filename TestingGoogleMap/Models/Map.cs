@@ -9,8 +9,8 @@ namespace TestingGoogleMap.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public string Lat { get; set; }
-        public string Long { get; set; }
+        public double? Lat { get; set; }
+        public double? Long { get; set; }
         public string Address { get; set; }
         public string Image { get; set; }
     }
