@@ -1,17 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
+using TestingGoogleMap.Models;
 
 namespace TestingGoogleMap.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+
+        public async Task<ActionResult> Index()
         {
-            return View();
+            return View(await db.Maps.ToListAsync());
         }
+
+
 
         public ActionResult About()
         {
