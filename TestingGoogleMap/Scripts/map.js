@@ -1,7 +1,7 @@
-﻿
+﻿let mappy;
 function initMap() {
     var uluru = { lat: 27.761767, lng: -82.650683 };
-    var mappy = new google.maps.Map(document.getElementById('map'), {
+    mappy = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: uluru
     });
@@ -13,19 +13,19 @@ function initMap() {
         { point: { lat: 27.772762, lng: -82.637793 }, label :"Williams Park"},
     ]
 
-        var markers = locations.map(function (location) {
-        return new google.maps.Marker({
-            position: location.point,
-            label: location.label,
+    //    var markers = locations.map(function (location) {
+    //    return new google.maps.Marker({
+    //        position: location.point,
+    //        label: location.label,
             
-        });
-    });
+    //    });
+    //});
 
+    //    var markerCluster = new MarkerClusterer(mappy, markers,
+    //        { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
        
-
-        var markerCluster = new MarkerClusterer(mappy, markers,
-            { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
+
 
 
 //    var marker = new google.maps.Marker({
@@ -39,14 +39,29 @@ let talkToServer = () => {
     $.ajax({
         url: '/api/MapsDeux',
         dataType: "json",
-        success: (data) => {
-            console.log(data);
+        success: (data) => { 
+
+            //load marker data here 
+
+            var markers = data.map((item) => {
+
+                return new google.maps.Marker({
+                    position: { lat: item.Lat, lng: item.Long },
+                    label: item.Title,
+                });
+            });
+
+            var markerCluster = new MarkerClusterer(mappy, markers,
+                { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
         },
         error: (data) => {
             console.log("oops", data)
         }
     });
 }
+
+
+
 
 
 //let loadMapData = () => {
