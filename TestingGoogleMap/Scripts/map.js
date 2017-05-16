@@ -1,38 +1,41 @@
 ﻿let mappy;
+let infowindow;
+let messagewindow;
+let newmarker;
+
+
 function initMap() {
     var uluru = { lat: 27.761767, lng: -82.650683 };
     mappy = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
-        center: uluru
+        center: uluru 
     });
 
-        //Create an array of labels
-    var locations = [
-        { point: { lat: 27.770068, lng: -82.63642 }, label:"The Iron Yard" },
-        { point: { lat: 27.771906, lng: -82.636013 }, label:"Jannus Live" },
-        { point: { lat: 27.772762, lng: -82.637793 }, label :"Williams Park"},
-    ]
+    infowindow = new google.maps.InfoWindow({
+        content: document.getElementById('form')
+    })
 
-    //    var markers = locations.map(function (location) {
-    //    return new google.maps.Marker({
-    //        position: location.point,
-    //        label: location.label,
-            
-    //    });
-    //});
+    messagewindow = new google.maps.InfoWindow({
+        content: document.getElementById('message')
+    });
+    
 
-    //    var markerCluster = new MarkerClusterer(mappy, markers,
-    //        { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
-       
+
+    google.maps.event.addListener(mappy, 'click', function (event) {
+        console.log('got here')
+        marker = new google.maps.Marker({
+            position: event.latLng,
+            map: mappy
+        });
+
+         google.maps.event.addListener(marker, "click", function () {
+            infowindow.open(mappy, marker);
+        });
+    });
+
+    talkToServer();
 }
-
-
-
-//    var marker = new google.maps.Marker({
-//        position: uluru,
-//        map: mappy
-//    });
-//}
+   
 
 let talkToServer = () => {
 
@@ -59,21 +62,7 @@ let talkToServer = () => {
         }
     });
 }
-
-
-
-
-
-//let loadMapData = () => {
-
-//    $.ajax({
-//        url: '/api/MapsDeux',
-//        dataType: "json",
-//        success: (data) => {
-//            data
-//        }
-//    })
-//}
+       
 
 
 
@@ -82,4 +71,5 @@ let talkToServer = () => {
 
 
 
-//27.761767,-82.650683
+
+
