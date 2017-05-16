@@ -46,9 +46,20 @@ let talkToServer = () => {
             console.log("oops", data)
         }
     });
-
-
 }
+
+
+//let loadMapData = () => {
+
+//    $.ajax({
+//        url: '/api/MapsDeux',
+//        dataType: "json",
+//        success: (data) => {
+//            data
+//        }
+//    })
+//}
+
 
 
 
