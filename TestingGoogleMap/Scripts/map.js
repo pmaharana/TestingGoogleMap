@@ -23,13 +23,13 @@ function initMap() {
 
     google.maps.event.addListener(mappy, 'click', function (event) {
         console.log('got here')
-        marker = new google.maps.Marker({
+        newmarker = new google.maps.Marker({
             position: event.latLng,
             map: mappy
         });
 
-         google.maps.event.addListener(marker, "click", function () {
-            infowindow.open(mappy, marker);
+         google.maps.event.addListener(newmarker, "click", function () {
+            infowindow.open(mappy, newmarker);
         });
     });
 
@@ -64,8 +64,32 @@ let talkToServer = () => {
 }
        
 
+function saveData() {
+    let title = escape(document.getElementById('title').value);
+    let address = escape(document.getElementById('address').value);
+    let latlng = newmarker.getPosition();
 
+    //let mapdata = [{ Title: title, Address: address, Lat: latlng.lat(), Long: latlng.lng() }];
 
+    $.ajax({
+        url: "/api/MapsDeux",
+        data: JSON.stringify({
+            // Those property names must match the property names of your PromotionDecision  view model
+            Title: title,
+            Address: address,
+            Lat: latlng.lat(),
+            Long: latlng.lng()
+        }),
+        contentType: "application/json",
+        type: "POST",
+        dataType: "json",
+        success: (data) => {
+            console.log('hello', data)
+        }
+
+    });
+
+}
 
 
 
