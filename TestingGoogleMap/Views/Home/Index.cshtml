@@ -1,37 +1,38 @@
 ﻿
 
 
-    <h3>Hellow Google</h3>
-    <div id="map"></div>
-
-<div id="form">
-    <table>
-        <tr><td>Title:</td><td><input type="text", id="title" /></td></tr>
-        <tr><td>Address:</td><td><input type="text" , id="address" /></td></tr>
-        <tr>
-        <td></td>
-        <td><input type="button" value="Save" onclick="saveData();" /></td></tr>
-    </table>
+<h3>Hellow Google</h3>
+<div id="map"></div>
+<div style="display:none;">
+    <div id="form">
+        <table>
+            <tr><td>Title:</td><td><input type="text" , id="title" /></td></tr>
+            <tr><td>Address:</td><td><input type="text" , id="address" /></td></tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="Save" onclick="saveData();" /></td>
+            </tr>
+        </table>
+    </div>
 </div>
-
 <div id="message">Location saved</div>
 
-       
 
-   
 
-    <button onclick="initMap();">map load</button>
+
+
+<button onclick="initMap();">map load</button>
 
 <p> <button onclick="talkToServer();"> Click me</button> </p>
-  
+
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
 
 
 
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb35GFpToNtidA7VfBEZS1vOEgiIxJ2vI&callback=initMap">
-    </script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb35GFpToNtidA7VfBEZS1vOEgiIxJ2vI&callback=initMap">
+</script>
 
 
 @*API Key AIzaSyBb35GFpToNtidA7VfBEZS1vOEgiIxJ2vI
