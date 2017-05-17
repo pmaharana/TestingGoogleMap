@@ -48,14 +48,34 @@ let talkToServer = () => {
 
             var markers = data.map((item) => {
 
-                return new google.maps.Marker({
+               
+
+                var _m = new google.maps.Marker({
                     position: { lat: item.Lat, lng: item.Long },
+                    title: item.Title,
                     label: item.Title,
                 });
+
+                var contentString = 
+                    item.Description + 
+                    '<img src="' + item.Image + '"></img>'
+                    ;
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                _m.addListener("click", function () {
+                    infowindow.open(mappy, _m);
+                });
+                return _m;
             });
+
 
             var markerCluster = new MarkerClusterer(mappy, markers,
                 { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+
+            markers
         },
         error: (data) => {
             console.log("oops", data)
@@ -74,7 +94,7 @@ function saveData() {
     $.ajax({
         url: "/api/MapsDeux",
         data: JSON.stringify({
-            // Those property names must match the property names of your PromotionDecision  view model
+            // Those property names must match the property names of map object in the controller
             Title: title,
             Address: address,
             Lat: latlng.lat(),

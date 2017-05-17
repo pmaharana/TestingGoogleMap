@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201705150012244_changedMapclass.Designer.cs">
       <DependentUpon>201705150012244_changedMapclass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705172025426_mapdescription.cs" />
+    <Compile Include="Migrations\201705172025426_mapdescription.Designer.cs">
+      <DependentUpon>201705172025426_mapdescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -310,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705150012244_changedMapclass.resx">
       <DependentUpon>201705150012244_changedMapclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705172025426_mapdescription.resx">
+      <DependentUpon>201705172025426_mapdescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

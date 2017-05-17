@@ -103,3 +103,4 @@ C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\Te
 C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.Migrations.first.resources
 C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.csproj.GenerateResource.Cache
 C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.Migrations.changedMapclass.resources
+C:\Users\prana\tiy\final\mapstest\TestingGoogleMap\TestingGoogleMap\obj\Debug\TestingGoogleMap.Migrations.mapdescription.resources
