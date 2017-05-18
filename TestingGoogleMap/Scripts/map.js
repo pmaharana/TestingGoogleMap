@@ -4,6 +4,8 @@ let messagewindow;
 let newmarker;
 
 
+
+
 function initMap() {
     let uluru = { lat: 27.761767, lng: -82.650683 };
     mappy = new google.maps.Map(document.getElementById('map'), {
@@ -48,6 +50,23 @@ function initMapAuth() {
 
     talkToServer();
 }
+
+
+function initMapSingle(latValue, longValue) {
+    let ulu = { lat: latValue, lng: longValue };
+    mappy = new google.maps.Map(document.getElementById('map'), {
+        zoom: 17,
+        center: ulu,
+        map:mappy
+    });
+
+    let singleMarker = new google.maps.Marker({
+        position: ulu,
+        map: mappy
+    });
+    
+}
+
 
 
 let talkToServer = () => {

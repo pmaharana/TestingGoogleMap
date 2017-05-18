@@ -28,7 +28,7 @@
            {
                <tr>
                    <td>
-                       @Html.DisplayFor(modelItem => item.Title)
+                       <a onClick="initMapSingle(@item.Lat, @item.Long);" style="cursor: pointer; ">@item.Title</a>
                    </td>
 
                    @*<td>
@@ -42,7 +42,14 @@
        </table>
 
    </div>
-  <div class="col-sm-10">Map goes here </div>
+  <div class="col-sm-10" id="map"></div>
  </div>
+ 
+
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+</script>  
    
-   
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb35GFpToNtidA7VfBEZS1vOEgiIxJ2vI&callback=initMap">
+</script>
+
