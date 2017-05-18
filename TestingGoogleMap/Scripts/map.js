@@ -5,10 +5,23 @@ let newmarker;
 
 
 function initMap() {
-    var uluru = { lat: 27.761767, lng: -82.650683 };
+    let uluru = { lat: 27.761767, lng: -82.650683 };
     mappy = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: uluru 
+    });
+
+    talkToServer();
+}
+
+
+
+function initMapAuth() {
+
+    let ulur = { lat: 27.761767, lng: -82.650683 };
+    mappy = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: ulur
     });
 
     infowindow = new google.maps.InfoWindow({
@@ -16,9 +29,9 @@ function initMap() {
     })
 
     messagewindow = new google.maps.InfoWindow({
-        content: document.getElementById('message')
+        content: document.getElementById('message') 
     });
-    
+
 
 
     google.maps.event.addListener(mappy, 'click', function (event) {
@@ -28,14 +41,14 @@ function initMap() {
             map: mappy
         });
 
-         google.maps.event.addListener(newmarker, "click", function () {
+        google.maps.event.addListener(newmarker, "click", function () {
             infowindow.open(mappy, newmarker);
         });
     });
 
     talkToServer();
 }
-   
+
 
 let talkToServer = () => {
 

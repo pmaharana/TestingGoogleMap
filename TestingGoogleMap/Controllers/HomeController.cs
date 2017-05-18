@@ -21,19 +21,17 @@ namespace TestingGoogleMap.Controllers
         }
 
 
-
-        public ActionResult About()
+        [System.Web.Mvc.Authorize]
+        public async Task<ActionResult> About()
         {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
+            
+            return View(await db.Maps.ToListAsync());
         }
 
-        public ActionResult Contact()
+        public async Task<ActionResult> Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(await db.Maps.ToListAsync());
         }
     }
 }
